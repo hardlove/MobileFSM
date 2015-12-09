@@ -45,6 +45,18 @@ body {
     width:100%;
 }
 
+.ui-bar-f
+{
+color:white;
+background-color:#13A93B;
+}
+.ui-body-f
+{
+font-weight:bold;
+color:purple;
+}
+
+
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
