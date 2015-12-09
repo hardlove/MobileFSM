@@ -46,9 +46,15 @@ var app = {
 //        receivedElement.setAttribute('style', 'display:block;');
 		alert("deviceready!");
         console.log('Received Event: ' + id);
-    	String path = window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory);
-console.log('sdcard path: ' + path);
-//        getSDCard();
+    	window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory,function(entry) {
+    	    var nativePath = entry.toURL();
+    	    
+    	    document.getElementById('bottom').innerHTML = nativePath;
+    	    
+    	});
+    	    
+    	
+
     }
     
 //    getSDCard():function(){
