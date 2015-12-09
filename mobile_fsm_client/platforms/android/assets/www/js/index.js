@@ -33,19 +33,31 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+//        app.receivedEvent('deviceready');
+		app.receivedEvent('login_page');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
+//        var listeningElement = parentElement.querySelector('.listening');
+//        var receivedElement = parentElement.querySelector('.received');
+//
+//        listeningElement.setAttribute('style', 'display:none;');
+//        receivedElement.setAttribute('style', 'display:block;');
+		alert("deviceready!");
         console.log('Received Event: ' + id);
+    	String path = window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory);
+console.log('sdcard path: ' + path);
+//        getSDCard();
     }
+    
+//    getSDCard():function(){
+//	String path = window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory);
+//	 console.log('sdcard path: ' + path);
+//	};
 };
+
+
+	
 
 app.initialize();
